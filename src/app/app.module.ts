@@ -8,6 +8,8 @@ import { TodoheaderComponent } from './todo/todoheader/todoheader.component';
 import { TodofooterComponent } from './todo/todofooter/todofooter.component';
 import { TodoinputComponent } from './todo/todoinput/todoinput.component';
 import { TodolistComponent } from './todo/todolist/todolist.component';
+import { DataService } from './todo/data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,9 +24,10 @@ import { TodolistComponent } from './todo/todolist/todolist.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DataService,TodofooterComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

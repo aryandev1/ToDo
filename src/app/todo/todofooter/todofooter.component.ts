@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-todofooter',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodofooterComponent implements OnInit {
 
-  constructor() { }
+  count=0
 
+  constructor(private data:DataService) { 
+    
+  }
   ngOnInit() {
+    setInterval(this.change,50);
   }
 
+  change()
+    {
+      this.count=DataService.count;
+      document.getElementById("pp").innerHTML="No. of items: "+this.count
+    }
+  
 }
